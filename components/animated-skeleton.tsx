@@ -12,7 +12,7 @@ export const AnimatedSkeleton = ({}) => {
       animate={{ opacity: 1 }}
       transition={{ delay: 1 }}
     >
-      {/* <CardTitle className="text-gray-200">COMING SOON...</CardTitle> */}
+      <CardTitle className="text-gray-200">COMING SOON...</CardTitle>
       {/* {children} */}
       {/* <FileQuestion className="text-gray-200" size={48} /> */}
     </motion.div>
