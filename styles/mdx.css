@@ -30,3 +30,27 @@
 [data-rehype-pretty-code-title] + pre {
   @apply mt-0;
 }
+
+#twitter-share-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  color: #56b8f5;
+  background-color: #fff;
+  cursor: pointer;
+  border: 2px solid #56b8f5;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  transition: color 0.2s, background-color 0.2s ease-in-out;
+}
+#twitter-share-btn:hover {
+  color: #fff;
+  background-color: #56b8f5;
+}
+#twitter-share-btn i {
+  pointer-events: none;
+}

@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --tweet-quoted-body-margin: 0rem 0 0rem 0 !important;
+
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
 
@@ -34,6 +36,7 @@
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
+
   }
 
   .dark {
@@ -67,6 +70,8 @@
     --ring: 216 34% 17%;
 
     --radius: 0.5rem;
+    --tw-prose-headings: #fff !important;
+    --tw-prose-bold: #ccc !important;
   }
 }
 
@@ -78,4 +83,19 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  h4 {
+    @apply dark:text-gray-300 underline underline-offset-4
+
+  }
+  p {
+    @apply dark:text-gray-400
+  }
+  strong {
+    @apply dark:text-gray-300
+  }
+}
+
+h2 {
+  @apply invisible h-0
 }

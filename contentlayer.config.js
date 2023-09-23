@@ -45,6 +45,10 @@ export const Guide = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    image: {
+      type: "string",
+      required: false,
+    },
     description: {
       type: "string",
     },
@@ -59,6 +63,15 @@ export const Guide = defineDocumentType(() => ({
     featured: {
       type: "boolean",
       default: false,
+    },
+    authors: {
+      // Reference types are not embedded.
+      // Until this is fixed, we can use a simple list.
+      // type: "reference",
+      // of: Author,
+      type: "list",
+      of: { type: "string" },
+      required: true,
     },
   },
   computedFields,

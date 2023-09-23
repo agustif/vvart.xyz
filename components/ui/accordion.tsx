@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDown } from "lucide-react"
+import { ChevronUp } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -14,7 +14,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn("border-b", className)}
+    className={cn("", className)}
     {...props}
   />
 ))
@@ -24,17 +24,17 @@ const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
+  <AccordionPrimitive.Header className="duration-600 group flex transition-all">
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+        "duration-600 [&[data-state=closed]]hover:shadow-md flex flex-1 items-center justify-between border-gray-100 py-4 font-medium outline-black  transition-all hover:border-black hover:bg-gray-50 [&[data-state=closed]>svg]:rotate-90 [&[data-state=open]]:rounded-b-none [&[data-state=open]]:border-gray-100 [&[data-state=open]]:bg-gray-100 [&[data-state=open]]:text-gray-800   [&[data-state=open]]:dark:bg-white [&[data-state=open]]:dark:text-gray-700",
         className
       )}
       {...props}
     >
+      <ChevronUp className="mr-4 h-4 w-4 transition-transform duration-200 group-hover:scale-150 group-focus:scale-150" />
       {children}
-      <ChevronDown className="h-4 w-4 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))
@@ -52,7 +52,7 @@ const AccordionContent = React.forwardRef<
     )}
     {...props}
   >
-    <div className="pb-4 pt-0">{children}</div>
+    <div>{children}</div>
   </AccordionPrimitive.Content>
 ))
 AccordionContent.displayName = AccordionPrimitive.Content.displayName

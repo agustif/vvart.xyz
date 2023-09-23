@@ -1,5 +1,6 @@
 import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
+import NextTopLoader from 'nextjs-toploader';
 
 import "@/styles/globals.css"
 import { siteConfig } from "@/config/site"
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NextTopLoader />
           {children}
           <Analytics />
           <Toaster />

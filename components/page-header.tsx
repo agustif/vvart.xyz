@@ -1,4 +1,7 @@
+"use client"
+
 import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
 
 interface DocsPageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   heading: string
@@ -11,15 +14,51 @@ export function DocsPageHeader({
   className,
   ...props
 }: DocsPageHeaderProps) {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
+  }
+
+  const headingVariants = {
+    hidden: { y: -50, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5, delay: 0.2 } },
+  }
+
+  const textVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5, delay: 0.4 } },
+  }
+
+  const hrVariants = {
+    hidden: { width: 0 },
+    visible: { width: "100%", transition: { duration: 0.5, delay: 0.6 } },
+  }
+
   return (
-    <>
-      <div className={cn("space-y-4", className)} {...props}>
-        <h1 className="inline-block font-heading text-4xl lg:text-5xl">
-          {heading}
-        </h1>
-        {text && <p className="text-xl text-muted-foreground">{text}</p>}
-      </div>
-      <hr className="my-4" />
-    </>
+    <motion.div
+      className={cn("mb-10 space-y-4", className)}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.h1
+        className="inline-block font-heading text-2xl md:text-4xl lg:text-5xl"
+        variants={headingVariants}
+      >
+        {heading}
+      </motion.h1>
+      {text && (
+        <motion.p
+          className="text-xl text-muted-foreground"
+          variants={textVariants}
+        >
+          {text}
+        </motion.p>
+      )}
+      <motion.hr
+        className="my-4"
+        variants={hrVariants}
+      />
+    </motion.div>
   )
 }

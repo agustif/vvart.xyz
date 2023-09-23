@@ -1,10 +1,12 @@
 "use client"
 
 import * as React from "react"
+import { motion, useAnimation } from "framer-motion"
 
 import { TableOfContents } from "@/lib/toc"
 import { cn } from "@/lib/utils"
 import { useMounted } from "@/hooks/use-mounted"
+import { Icons } from "./icons"
 
 interface TocProps {
   toc: TableOfContents
@@ -24,17 +26,36 @@ export function DashboardTableOfContents({ toc }: TocProps) {
   )
   const activeHeading = useActiveItem(itemIds)
   const mounted = useMounted()
+  const controls = useAnimation()
+
+  React.useEffect(() => {
+    if (mounted) {
+      controls.start("visible")
+    }
+  }, [mounted, controls])
 
   if (!toc?.items) {
     return null
   }
 
-  return mounted ? (
-    <div className="space-y-2">
-      <p className="font-medium">On This Page</p>
+  return (
+    <motion.div
+      className="space-y-2"
+      initial="hidden"
+      animate={controls}
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 50 },
+      }}
+      transition={{ duration: 0.5 }}
+    >
+      <p className="inline-flex items-center justify-center gap-2 font-medium">
+        Table of contents
+        {/* <Icons.logo className="h-5 w-5" />  */}
+      </p>
       <Tree tree={toc} activeItem={activeHeading} />
-    </div>
-  ) : null
+    </motion.div>
+  )
 }
 
 function useActiveItem(itemIds: (string | undefined)[]) {
@@ -88,27 +109,49 @@ interface TreeProps {
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
   return tree?.items?.length && level < 3 ? (
-    <ul className={cn("m-0 list-none", { "pl-4": level !== 1 })}>
+    <motion.ul
+
+      className={cn("m-0 select-none list-none", { "pl-4": level !== 1 })}
+      initial="hidden"
+      animate="visible"
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 20 },
+      }}
+      transition={{ duration: 0.5 }}
+    >
       {tree.items.map((item, index) => {
+        const isActive = item.url === `#${activeItem}`
         return (
-          <li key={index} className={cn("mt-0 pt-2")}>
+          <motion.li
+            key={index}
+            className={cn("mt-0 pt-2")}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: 20 },
+            }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          ><div className="flex gap-1">
             <a
+              tabIndex={-1}
               href={item.url}
               className={cn(
                 "inline-block no-underline",
-                item.url === `#${activeItem}`
-                  ? "font-medium text-primary"
-                  : "text-sm text-muted-foreground"
+                isActive ? "font-medium text-primary" : "text-sm text-muted-foreground"
               )}
             >
               {item.title}
             </a>
+            {isActive && <Icons.logo className="ml-2 h-5 w-5" />}
+            </div>
             {item.items?.length ? (
               <Tree tree={item} level={level + 1} activeItem={activeItem} />
             ) : null}
-          </li>
+          </motion.li>
         )
       })}
-    </ul>
+    </motion.ul>
   ) : null
 }

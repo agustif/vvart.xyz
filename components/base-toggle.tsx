@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Icons } from "@/components/icons"
 
-export function ModeToggle() {
+export function BaseToggle() {
   const { setTheme } = useTheme()
 
   return (
@@ -24,7 +24,9 @@ export function ModeToggle() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="center">
+      <DropdownMenuContent align="end" side="left" className="mt-4 flex-col rounded-md" sideOffset={10}>
+        <div className="flex">
+
         <DropdownMenuItem onClick={() => setTheme("light")}>
           <Icons.sun className="mr-2 h-4 w-4" />
           <span>Light</span>
@@ -37,6 +39,7 @@ export function ModeToggle() {
           <Icons.laptop className="mr-2 h-4 w-4" />
           <span>System</span>
         </DropdownMenuItem>
+        </div>
       </DropdownMenuContent>
     </DropdownMenu>
   )

@@ -12,7 +12,7 @@ const interBold = fetch(
   new URL("../../../assets/fonts/CalSans-SemiBold.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer())
 
-export async function GET(req: Request) {
+export async function GET(req: Request): Promise<Response> {
   try {
     const fontRegular = await interRegular
     const fontBold = await interBold
@@ -28,7 +28,7 @@ export async function GET(req: Request) {
     const paint = mode === "dark" ? "#fff" : "#000"
 
     const fontSize = heading.length > 100 ? "70px" : "100px"
-
+// @ts-expect-error
     return new ImageResponse(
       (
         <div
