@@ -35,7 +35,7 @@ const components = {
   h3: ({ className, ...props }: { className?: string }) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-20 text-2xl font-semibold tracking-tight",
+        "mt-8 scroll-m-20 text-2xl font-semibold tracking-tight dark:text-gray-200",
         className
       )}
       {...props}
@@ -70,7 +70,9 @@ const components = {
   ),
   a: ({ className, ...props }: { className?: string }) => (
     <a
-      className={cn("underline-offset-12 font-medium underline", className)}
+    target="_blank"
+    rel="noopener noreferrer"
+      className={cn("font-medium text-blue-300 underline underline-offset-4 transition-all duration-200 hover:text-blue-400 hover:underline-offset-8 dark:text-[#60a5fa]", className)}
       {...props}
     />
   ),

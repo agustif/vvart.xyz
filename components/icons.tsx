@@ -22,19 +22,21 @@ import {
   Trash,
   Twitter,
   User,
-  X,
+  BadgeX,
   BadgeCheck,
   Code2,
   Home,
+  ExternalLink,
   PenLine
 } from "lucide-react"
 
 export const Icons = {
+  link: ExternalLink,
   home: Home,
   code: Code2,
   pen: PenLine,
   logo: BadgeCheck,
-  close: X,
+  close: BadgeX,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,

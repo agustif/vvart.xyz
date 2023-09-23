@@ -49,7 +49,7 @@ export function DashboardTableOfContents({ toc }: TocProps) {
       }}
       transition={{ duration: 0.5 }}
     >
-      <p className="inline-flex items-center justify-center gap-2 font-medium">
+      <p className="mt-8 inline-flex select-none items-center justify-center gap-2 font-medium">
         Table of contents
         {/* <Icons.logo className="h-5 w-5" />  */}
       </p>

@@ -109,24 +109,27 @@ export default async function GuidePage({ params }: GuidePageProps) {
         <AnimatedImage src={guide.image} alt={`${guide.title}`} className="mb-6 h-96 w-full rounded-lg object-cover" />
 
         <Mdx code={guide.body.code} />
-        <hr className="my-4" />
-        <div className="group flex justify-start py-6 lg:py-10">
+        <hr className="my-8" />
+        <div className="group flex justify-start py-6 lg:py-20">
           <Link
-            href="/guides"
+            href="/"
             className={cn(buttonVariants({ variant: "ghost" }))}
           >
-            <Icons.chevronLeft className="mr-2 h-4 w-4 group-hover:scale-150 group-focus:scale-150" />
-            Back
+            <Icons.chevronLeft className="mr-2 h-4 w-4 transition-all duration-300 group-hover:scale-150 group-focus:scale-150" />
+            Back home
+            {/* to  {' '}
+            <Icons.home className="transition-all duration-300 mx-1 group-hover:mx-1.5 h-3 w-3 group-hover:scale-150 group-focus:scale-150" />
+            home page  */}
           </Link>
         </div>
       </div>
       <div className="hidden w-[350px] text-sm  lg:block">
 
-        <div className="sticky top-10">
+        <div className="sticky top-20">
           <GuideAuthors authors={authors as Author[]} />
         </div>
 
-        <div className="sticky top-48 max-h-[90vh] overflow-y-hidden">
+        <div className="sticky top-56 max-h-[90vh] overflow-y-hidden">
           <DashboardTableOfContents toc={toc} />
         </div>
       </div>

@@ -97,5 +97,5 @@
 }
 
 h2 {
-  @apply invisible h-0
+  @apply invisible h-0 select-none
 }

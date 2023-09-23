@@ -75,7 +75,7 @@ import { GuideAuthors } from "@/components/guide-authors"
                       <p>No guides published.</p>
                     )}
                   </div>
-                  <GuideAuthors className="mt-8 max-w-sm" authors={authors as Author[]} />
+                  <GuideAuthors className="mt-8 max-w-[290px]" authors={authors as Author[]} />
 
                       </div>
                 )

@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { AnimatedAccordionTrigger } from "./animated-accordion-trigger"
 import { AnimatedAccordionContent } from "./animated-accordion-content"
 import { Clock, Clock1, Clock2,Clock3,Clock4, Clock5, Clock6, Clock7 } from "lucide-react";
-import { Direction } from "@radix-ui/react-accordion";
+import { type Direction } from "@/components/ui/accordion";
 import { TooltipContent, TooltipProvider, TooltipTrigger , Tooltip, TooltipArrow } from "@/components/ui/tooltip";
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -97,7 +97,7 @@ export function MdxAccordion({
                 animate="visible"
                 exit="exit"
               >
-                <Badge className="h-5 w-20 gap-1 border-2 border-gray-400 bg-white px-2 pl-4 text-[10px] text-gray-500 hover:bg-gray-50  group-hover:border-gray-700 dark:text-black md:h-6 md:w-24  md:px-4 md:text-xs lg:w-28">
+                <Badge className="h-5 w-20 select-none gap-1 border-2 border-gray-400 bg-white px-2 pl-4 text-[10px] text-gray-500 hover:bg-gray-50  group-hover:border-gray-700 dark:text-black md:h-6 md:w-24  md:px-4 md:text-xs lg:w-28">
                   <ClockWithTime readingTimeInMinutes={readingTimeInMinutes} /> {readingTimeInMinutes} min read
                 </Badge>
               </motion.div>
@@ -107,10 +107,10 @@ export function MdxAccordion({
         </AccordionItem>
       </Accordion>
         </TooltipTrigger>
-        <TooltipContent side="bottom" sideOffset={5}>
+        {!isOpen && <TooltipContent className="select-none" side="bottom" sideOffset={5}>
           <TooltipArrow className="fill-gray-200 dark:fill-gray-800" />
           {disabled ? "Coming soon" : "Click to read more"}
-        </TooltipContent>
+        </TooltipContent>}
         </Tooltip>
       </TooltipProvider>
     </motion.div>
