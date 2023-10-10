@@ -106,17 +106,17 @@ export default async function GuidePage({ params }: GuidePageProps) {
         <TwitterShare />
 
         <DocsPageHeader heading={guide.title} text={guide.description} />
-        <AnimatedImage src={guide.image} alt={`${guide.title}`} className="mb-6 h-96 w-full select-none rounded-lg object-cover" />
+        <AnimatedImage src={guide.image} alt={`${guide.title}`} className="mb-gst6 h-96 w-full select-none rounded-lg object-cover" />
 
         <Mdx code={guide.body.code} />
         <hr className="my-8" />
-        <div className="group flex justify-start py-6 lg:py-20">
+        <div className="group flex justify-start py-6 lg:py-20  selection:bg-black  selection:text-white  selection:dark:bg-white  selection:dark:text-black">
           <Link
             href="/"
             className={cn(buttonVariants({ variant: "ghost" }))}
           >
-            <Icons.chevronLeft className="mr-2 h-4 w-4 transition-all duration-300 group-hover:scale-150 group-focus:scale-150" />
-            Back home
+            <Icons.chevronLeft className="mr-2 h-4 w-4  transition-all duration-300 group-hover:scale-150 group-focus:scale-150" />
+            Go back
             {/* to  {' '}
             <Icons.home className="transition-all duration-300 mx-1 group-hover:mx-1.5 h-3 w-3 group-hover:scale-150 group-focus:scale-150" />
             home page  */}

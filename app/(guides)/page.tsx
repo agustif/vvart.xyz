@@ -35,7 +35,7 @@ import { GuideAuthors } from "@/components/guide-authors"
 
                     <div>
                     {guides?.length ? (
-                      <div className={'grid gap-4  md:grid-cols-2  md:gap-6'}>
+                      <div className={'grid gap-4  selection:bg-black  selection:text-white md:grid-cols-2 md:gap-6'}>
                         {guides.map((guide) => (
                           <AnimatedIcon key={guide._id}>
                             <article

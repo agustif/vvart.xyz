@@ -26,7 +26,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
       animate="visible"
     >
       <motion.div
-        className="container mb-10 flex flex-col items-center justify-between gap-4 py-10 selection:dark:bg-white selection:dark:text-black md:h-24 md:flex-row md:py-0"
+        className="container mb-10 flex flex-col items-center justify-between gap-4 py-10  selection:bg-black  selection:text-white selection:dark:bg-white selection:dark:text-black md:h-24 md:flex-row md:py-0"
         variants={itemVariants}
       >
         <motion.div

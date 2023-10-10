@@ -36,7 +36,7 @@ export function DocsPageHeader({
 
   return (
     <motion.div
-      className={cn("mb-10 space-y-4 selection:dark:bg-white selection:dark:text-black", className)}
+      className={cn("mb-10 space-y-4  selection:bg-black  selection:text-white selection:dark:bg-white selection:dark:text-black", className)}
       variants={containerVariants}
       initial="hidden"
       animate="visible"

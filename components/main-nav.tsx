@@ -16,6 +16,7 @@ import {
   TooltipProvider,
   TooltipArrow,
 } from "@/components/ui/tooltip"
+import { Book } from "lucide-react"
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -31,7 +32,7 @@ export function MainNav({ items, children }: MainNavProps) {
   }
 
   return (
-    <div className="flex w-full gap-6 pt-10 selection:dark:bg-white selection:dark:text-black md:gap-10">
+    <div className="mr-10 flex w-full justify-between  gap-6 pt-10  selection:bg-black  selection:text-white selection:dark:bg-white selection:dark:text-black md:gap-10">
       <TooltipProvider>
         <Tooltip>
         <TooltipTrigger asChild>
@@ -50,8 +51,9 @@ export function MainNav({ items, children }: MainNavProps) {
         </Tooltip>
       </TooltipProvider>
       {items?.length ? (
-        <nav className="hidden justify-center gap-6 md:flex">
-          {items?.map((item, index) => (
+        <nav className="hidden items-center gap-6 md:flex">
+          <Book size={16} />
+          {items?.filter(item => item.disabled !== true).map((item, index) => (
             <Link
               key={items[0].title}
               href={item.disabled ? "#" : item.href}
@@ -66,6 +68,19 @@ export function MainNav({ items, children }: MainNavProps) {
             >
               {item.title}
             </Link>
+          ))}
+                    {items?.filter(item => item.disabled === true).map((item, index) => (
+            <p
+              className={cn(
+                "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
+                item.href.startsWith(`/${segment}`)
+                  ? "text-foreground"
+                  : "text-foreground/60",
+                item.disabled && "cursor-not-allowed opacity-80"
+              )}
+            >
+              {item.title}
+            </p>
           ))}
         </nav>
       ) : null}
