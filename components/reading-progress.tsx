@@ -25,7 +25,7 @@ export function ReadingProgressBar() {
       <div className="reading-progress-bar" style={{ width: `${scrollPosition}%` }}>
         <div className="reading-progress-percentage">{Math.round(scrollPosition)}%</div>
       </div>
-        <Icons.logo className="absolute h-4 w-4 right-1 top-0.5 text-[#e0e0e0]" />
+        <Icons.logo className="absolute right-1 top-0.5 h-4 w-4 text-[#e0e0e0]" />
       <style jsx>{`
         .reading-progress-container {
           width: 100%;
