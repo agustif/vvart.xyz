@@ -12,7 +12,7 @@ export default function NotFound() {
 
       <Link href="/"className="flex items-center gap-4"> Go back Home <Icons.home /> </Link>
       <Separator orientation="vertical" />
-      <Link href="/guides/checks" className="flex items-center gap-4"> <Icons.logo /> Checks guide</Link>
+      <Link href="/checks" className="flex items-center gap-4"> <Icons.logo /> Checks guide</Link>
       </div>
 
     </div>

@@ -35,7 +35,7 @@ export function AnimatedImage({
         <motion.img
           src={props.src}
           alt={props.title}
-          className="z-1 mb-6 h-96 w-full rounded-lg object-cover"
+          className="z-1 mb-6 h-96 w-full select-none rounded-lg object-cover"
           variants={variants}
           initial="hidden"
           animate="visible"

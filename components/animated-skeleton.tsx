@@ -6,7 +6,7 @@ import Image from "next/image"
 export const AnimatedSkeleton = ({}) => {
   return(
     <motion.div
-      className="cursor-disabled mt-2 hidden h-full w-full flex-col items-center justify-center gap-5 rounded-lg rounded-tl-none border-2 border-dashed border-gray-200 bg-[#F8F7FC] p-6  opacity-50  transition-shadow dark:border-gray-800 dark:bg-[#070803] md:flex"
+      className="mt-2 hidden h-full w-full cursor-not-allowed flex-col items-center justify-center gap-5 rounded-lg rounded-tl-none border-2 border-dashed border-gray-200 bg-[#F8F7FC] p-6  opacity-50  transition-shadow dark:border-gray-800 dark:bg-[#070803] md:flex"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1 }}

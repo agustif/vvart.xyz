@@ -60,7 +60,7 @@ import { GuideAuthors } from "@/components/guide-authors"
                                   )}
                                 </div>
                               </div>
-                              <Link href={guide.slug} className="absolute inset-0">
+                              <Link href={guide.slug.replace("/guides","")} className="absolute inset-0">
                                 <span className="sr-only">View</span>
                               </Link>
                             </article>
