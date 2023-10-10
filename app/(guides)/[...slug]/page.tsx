@@ -110,7 +110,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
         <Mdx code={guide.body.code} />
         <hr className="my-8" />
-        <div className="group flex justify-start py-6 lg:py-20  selection:bg-black  selection:text-white  selection:dark:bg-white  selection:dark:text-black">
+        <div className="group flex justify-start py-6 selection:bg-black  selection:text-white  selection:dark:bg-white  selection:dark:text-black  lg:py-20">
           <Link
             href="/"
             className={cn(buttonVariants({ variant: "ghost" }))}
