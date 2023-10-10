@@ -6,7 +6,6 @@ import { motion } from "framer-motion"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
-import { ModeToggle } from "@/components/mode-toggle"
 
 export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
   const containerVariants = {
@@ -27,7 +26,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
       animate="visible"
     >
       <motion.div
-        className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0"
+        className="container mb-10 flex flex-col items-center justify-between gap-4 py-10 selection:dark:bg-white selection:dark:text-black md:h-24 md:flex-row md:py-0"
         variants={itemVariants}
       >
         <motion.div
@@ -49,8 +48,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             </a>
           </p>
         </motion.div>
-        <div className="-mt-12 flex flex-col items-center justify-center">
-          <ModeToggle />
+        <div className="-mt-5 flex flex-col items-center justify-center">
           <div className="mt-2 flex items-center justify-center gap-2">
 
           <Icons.logo className="h-8 w-auto" />
@@ -65,7 +63,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
         >
           <p className="flex flex-row items-center gap-2 text-center text-sm leading-loose md:text-left">
             <a
-              href={siteConfig.links.twitter}
+              href={"https://twitter.com/@0xAgusti"}
               target="_blank"
               rel="noreferrer noopener"
               className=" text-sm font-medium transition-all duration-300 ease-in-out hover:text-green-600"

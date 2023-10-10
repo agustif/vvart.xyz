@@ -31,7 +31,7 @@ export function MainNav({ items, children }: MainNavProps) {
   }
 
   return (
-    <div className="flex w-full gap-6 md:gap-10">
+    <div className="flex w-full pt-10 gap-6 md:gap-10 selection:dark:text-black selection:dark:bg-white">
       <TooltipProvider>
         <Tooltip>
         <TooltipTrigger asChild>

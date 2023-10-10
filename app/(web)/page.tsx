@@ -26,7 +26,7 @@ import { GuideAuthors } from "@/components/guide-authors"
   )
 
                 return (
-                  <div className="px-3 py-6 lg:py-10">
+                  <div className="px-3 py-6">
 
                     <DocsPageHeader
                       heading="Checks Guide"
@@ -50,8 +50,8 @@ import { GuideAuthors } from "@/components/guide-authors"
                               <div className="flex flex-col justify-between space-y-4 pt-4">
                                 <Icons.logo className="absolute -right-3 -top-3 fill-black text-white" />
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src={guide.image} alt={guide.title} className="h-4/5 w-full rounded-lg object-cover" />
-                                <div className="space-y-2">
+                                <img src={guide.image} alt={guide.title} className="h-4/5 w-full select-none rounded-lg object-cover" />
+                                <div className="space-y-2 selection:dark:bg-white selection:dark:text-black">
                                   <h3 className="text-2xl font-semibold tracking-tight">
                                     {guide.title}
                                   </h3>

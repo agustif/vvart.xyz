@@ -1,8 +1,7 @@
 "use client"
 
 import {motion} from "framer-motion"
-import { FileQuestion } from "lucide-react";
-import { CardTitle } from "./ui/card";
+
 import Image from "next/image"
 export const AnimatedSkeleton = ({}) => {
   return(
@@ -12,11 +11,9 @@ export const AnimatedSkeleton = ({}) => {
       animate={{ opacity: 1 }}
       transition={{ delay: 1 }}
     >
-      <Image alt="opepen-vvd" src="/images/guides/opepen/opepen-light.png"className="block dark:hidden"    width="512" height="512"/>
-      <Image alt="opepen-vvd" src="/images/guides/opepen/opepen-dark.png" className="hidden dark:block"  width="512" height="512"/>
-      <p className="text-3xl font-bold text-[#F4F3F8] dark:text-[#0B0B07] ">COMING SOON...</p>
-      {/* {children} */}
-      {/* <FileQuestion className="text-gray-200" size={48} /> */}
+      <Image alt="opepen-vvd" src="/images/guides/opepen/opepen-light.png"className="block selection:bg-black selection:text-white dark:hidden dark:border-white selection:dark:bg-transparent"    width="512" height="512"/>
+      <Image alt="opepen-vvd" src="/images/guides/opepen/opepen-dark.png" className="hidden selection:bg-black selection:text-white dark:block dark:border-white selection:dark:bg-transparent"  width="512" height="512"/>
+      <p className="text-3xl font-bold text-[#F4F3F8] selection:bg-black selection:text-white dark:border-white dark:text-[#0B0B07] selection:dark:bg-white selection:dark:text-black">COMING SOON...</p>
     </motion.div>
   )
 }

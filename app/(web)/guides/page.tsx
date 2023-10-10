@@ -21,7 +21,7 @@ export default function GuidesPage() {
       return compareDesc(new Date(a.date), new Date(b.date))
     })
   return (
-    <div className="px-3 py-6 lg:py-10">
+    <div className="px-3 py-6">
       <DocsPageHeader
         heading="Guides"
         text="Collector's guide into the visualize value ecosystem: checks, opepen"
@@ -43,7 +43,7 @@ export default function GuidesPage() {
                   <Icons.logo className="absolute -right-3 -top-3 fill-black text-white dark:fill-white dark:text-black" />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={guide.image} alt={guide.title} className="h-4/5 w-full rounded-lg object-cover" />
-                  <div className="space-y-2">
+                  <div className="space-y-2 selection:dark:bg-white selection:dark:text-black">
                     <h3 className="text-2xl font-semibold tracking-tight">
                       {guide.title}
                     </h3>

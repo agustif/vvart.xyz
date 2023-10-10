@@ -48,7 +48,7 @@ export function GuideAuthors({ authors, className }: GuideAuthorsProps) {
     <>
       {authors?.length ? (
         <motion.div
-          className={`group flex  cursor-pointer justify-between space-x-4 rounded-lg border-2 border-gray-100 shadow-[#60a5fa]   transition-all duration-300 hover:border-[#60a5fa] hover:bg-gray-50 hover:shadow-[#60a5fa] dark:border-gray-800 dark:shadow-[blue-500] dark:hover:bg-gray-900 ${className}`
+          className={`group flex  cursor-pointer justify-between space-x-4 rounded-lg border-2 border-gray-100 shadow-[#60a5fa]   transition-all duration-300 selection:bg-white hover:border-[#60a5fa] hover:bg-gray-50 hover:shadow-[#60a5fa] dark:border-gray-800 dark:shadow-[blue-500] dark:hover:bg-gray-900 ${className}`
           }
           variants={container}
           initial="hidden"
@@ -70,7 +70,7 @@ export function GuideAuthors({ authors, className }: GuideAuthorsProps) {
                         alt={author.title}
                         width={80}
                         height={80}
-                        className="rounded-full bg-white shadow-sm transition-all duration-300 hover:scale-105 group-hover:bg-gray-100 group-hover:shadow-md dark:bg-gray-800 dark:shadow-[blue-500] dark:group-hover:bg-gray-700"
+                        className="select-none rounded-full bg-white shadow-sm transition-all duration-300 hover:scale-105 group-hover:bg-gray-100 group-hover:shadow-md dark:bg-gray-800 dark:shadow-[blue-500] dark:group-hover:bg-gray-700"
                         variants={item}
                       />
                       <Icons.logo className="absolute bottom-3 left-16  h-6 w-6 fill-[#60a5fa] text-white" />
@@ -84,9 +84,9 @@ export function GuideAuthors({ authors, className }: GuideAuthorsProps) {
                         <Link
                           target="_blank"
                           href={`https://twitter.com/${author.twitter}`}
-                          className="flex items-center gap-1 rounded-full border-2 border-blue-400 px-2 py-0.5 text-xs font-semibold text-blue-400 transition-all duration-300 group-hover:bg-[#60a5fa] group-hover:text-white dark:text-gray-500"
+                          className="flex select-none items-center gap-1 rounded-full border-2 border-blue-400 px-2 py-0.5 text-xs font-semibold text-blue-400 transition-all duration-300 group-hover:bg-[#60a5fa] group-hover:text-white dark:text-gray-500"
                         >
-                          <Icons.twitter className="h-3 w-3 fill-blue-400  font-semibold text-blue-400 group-hover:fill-white group-hover:text-white" />
+                          <Icons.twitter className="h-3 w-3 select-none  fill-blue-400 font-semibold text-blue-400 group-hover:fill-white group-hover:text-white" />
                           @{author.twitter}
                         </Link>
                       </motion.div>
@@ -95,7 +95,7 @@ export function GuideAuthors({ authors, className }: GuideAuthorsProps) {
               </div>
             ) : null)}
             </div>
-                                          <TooltipContent sideOffset={7} side="bottom" className="flex select-none items-center gap-2">
+                                          <TooltipContent align={"start"} alignOffset={-15} sideOffset={7} side="bottom" className="flex select-none items-center gap-2">
                           <Icons.link className="h-4 w-4 text-gray-700 dark:fill-gray-800" />
                           Go to {authors[0].title}&apos;s Twitter
                           <TooltipArrow className="fill-gray-200 dark:fill-gray-800" />

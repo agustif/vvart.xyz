@@ -1,9 +1,8 @@
 // components/ReadingProgressBar.js
 
-// import React, { useEffect, useState } from 'react';
-// import {useWindowSize} from "@uidotdev/usehooks";
 import React, { useEffect, useState, useCallback } from 'react';
 import { useWindowSize } from '@uidotdev/usehooks';
+import { Icons } from './icons';
 
 export function ReadingProgressBar() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -23,11 +22,14 @@ export function ReadingProgressBar() {
 
   return (
     <div className="reading-progress-container">
-      <div className="reading-progress-bar" style={{ width: `${scrollPosition}%` }}></div>
+      <div className="reading-progress-bar" style={{ width: `${scrollPosition}%` }}>
+        <div className="reading-progress-percentage">{Math.round(scrollPosition)}%</div>
+      </div>
+        <Icons.logo className="absolute h-4 w-4 right-1 top-0.5 text-[#e0e0e0]" />
       <style jsx>{`
         .reading-progress-container {
           width: 100%;
-          height: 4px;
+          height: 20px;
           background-color: #e0e0e0;
           position: fixed;
           top: 0;
@@ -35,12 +37,23 @@ export function ReadingProgressBar() {
           z-index: 1000;
         }
         .reading-progress-bar {
-          height: 4px;
+          height: 20px;
           background-color: #000;
+          position: relative;
+        }
+        .reading-progress-percentage {
+          position: absolute;
+          top: 0px;
+          left: 10px;
+          font-weight: 600;
+          font-size: 12px;
+          z-index: 1001;
+          color: #fff;
+          text-shadow: 0px 0px 5px #000;
         }
       `}</style>
     </div>
   );
-      };
+};
 
-export default ReadingProgressBar
+export default ReadingProgressBar;
