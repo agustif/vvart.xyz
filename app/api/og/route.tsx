@@ -28,7 +28,6 @@ export async function GET(req: Request): Promise<Response> {
     const paint = mode === "dark" ? "#fff" : "#000"
 
     const fontSize = heading.length > 100 ? "70px" : "100px"
-// @ts-expect-error
     return new ImageResponse(
       (
         <div

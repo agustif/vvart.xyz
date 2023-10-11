@@ -5,14 +5,6 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Separator } from "@/components/ui/separator"
 import { Icons } from "./icons"
-import {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-  TooltipProvider,
-  TooltipArrow,
-} from "@/components/ui/tooltip"
-
 interface GuideAuthorsProps {
   authors: typeof allAuthors[number][]
 }
@@ -54,12 +46,9 @@ export function GuideAuthors({ authors, className }: GuideAuthorsProps) {
           initial="hidden"
           animate="show"
         >
-          <TooltipProvider>
-                <Tooltip>
                   <div className="w-[345px]">
             {filteredAuthors.map((author) => author ? (
               <div key={author._id} className="relative flex w-full flex-col gap-2">
-                <TooltipTrigger asChild>
                     <Link
                       target="_blank"
                       href={`https://twitter.com/${author.twitter}`}
@@ -91,17 +80,9 @@ export function GuideAuthors({ authors, className }: GuideAuthorsProps) {
                         </Link>
                       </motion.div>
                     </Link>
-                  </TooltipTrigger>
               </div>
             ) : null)}
             </div>
-                                          <TooltipContent align={"start"} alignOffset={-15} sideOffset={7} side="bottom" className="flex select-none items-center gap-2">
-                          <Icons.link className="h-4 w-4 text-gray-700 dark:fill-gray-800" />
-                          Go to {authors[0].title}&apos;s Twitter
-                          <TooltipArrow className="fill-gray-200 dark:fill-gray-800" />
-                        </TooltipContent>
-                </Tooltip>
-          </TooltipProvider>
         </motion.div>
       ) : null}
       <motion.div

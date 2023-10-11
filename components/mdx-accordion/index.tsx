@@ -83,9 +83,6 @@ export function MdxAccordion({
       animate={controls}
       className={cn(className, "py-3")}
     >
-      <TooltipProvider>
-        <Tooltip>
-        <TooltipTrigger className="w-full">
       <Accordion type="single" collapsible {...props} onValueChange={() => setIsOpen(!isOpen)}>
         <AccordionItem value="item-1">
           <AnimatedAccordionTrigger isOpen={isOpen} disabled={disabled} title={title} slug={slug}>
@@ -106,13 +103,6 @@ export function MdxAccordion({
           <AnimatedAccordionContent>{children}</AnimatedAccordionContent>
         </AccordionItem>
       </Accordion>
-        </TooltipTrigger>
-        {!isOpen && <TooltipContent className="select-none" side="bottom" sideOffset={5}>
-          <TooltipArrow className="fill-gray-200 dark:fill-gray-800" />
-          {disabled ? "Coming soon" : "Click to read more"}
-        </TooltipContent>}
-        </Tooltip>
-      </TooltipProvider>
     </motion.div>
   )
 }

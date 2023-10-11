@@ -5,7 +5,7 @@ import { getTableOfContents } from "@/lib/toc"
 import { Icons } from "@/components/icons"
 import { Mdx } from "@/components/mdx-components"
 import { DocsPageHeader } from "@/components/page-header"
-import { DashboardTableOfContents } from "@/components/toc"
+import { GuideTableOfContents } from "@/components/toc"
 import "@/styles/mdx.css"
 import { Metadata } from "next"
 import { env } from "@/env.mjs"
@@ -130,7 +130,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
         </div>
 
         <div className="sticky top-56 max-h-[90vh] overflow-y-hidden">
-          <DashboardTableOfContents toc={toc} />
+          <GuideTableOfContents toc={toc} />
         </div>
       </div>
     </main>

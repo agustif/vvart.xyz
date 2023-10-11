@@ -9,13 +9,7 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { MobileNav } from "@/components/mobile-nav"
-import {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-  TooltipProvider,
-  TooltipArrow,
-} from "@/components/ui/tooltip"
+
 import { Book } from "lucide-react"
 
 interface MainNavProps {
@@ -33,9 +27,6 @@ export function MainNav({ items, children }: MainNavProps) {
 
   return (
     <div className="mr-10 flex w-full justify-between  gap-6 pt-10  selection:bg-black  selection:text-white selection:dark:bg-white selection:dark:text-black md:gap-10">
-      <TooltipProvider>
-        <Tooltip>
-        <TooltipTrigger asChild>
           <Link href="/" className="hidden items-center space-x-2 md:flex">
             <Icons.logo />
             <span className="hidden font-bold sm:inline-block">
@@ -44,12 +35,7 @@ export function MainNav({ items, children }: MainNavProps) {
             </span>
             {/* <Icons.home className="h-4 w-auto" /> */}
           </Link>
-        </TooltipTrigger>
-        <TooltipContent sideOffset={10} side="left">Go to home
-              <TooltipArrow className="fill-gray-200 dark:fill-gray-800" />
-              </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+
       {items?.length ? (
         <nav className="hidden items-center gap-6 md:flex">
           <Book size={16} />
