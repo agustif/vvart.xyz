@@ -106,7 +106,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
         <TwitterShare />
 
         <DocsPageHeader heading={guide.title} text={guide.description} />
-        <AnimatedImage src={guide.image} alt={`${guide.title}`} className="mb-gst6 h-96 w-full select-none rounded-lg object-cover" />
+        <AnimatedImage src={guide.image} alt={`${guide.title}`} className="select-none rounded-lg object-cover" />
 
         <Mdx code={guide.body.code} />
         <hr className="my-8" />

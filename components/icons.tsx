@@ -27,10 +27,14 @@ import {
   Code2,
   Home,
   ExternalLink,
-  PenLine
+  PenLine,
+  ArrowDown,
+  BadgeInfo,
 } from "lucide-react"
 
 export const Icons = {
+  arrowDown: ArrowDown,
+  info: BadgeInfo,
   link: ExternalLink,
   home: Home,
   code: Code2,

@@ -94,8 +94,8 @@ export function MdxAccordion({
                 animate="visible"
                 exit="exit"
               >
-                <Badge className="h-5 w-20 select-none gap-1 border-2 border-gray-400 bg-white px-2 pl-4 text-[10px] text-gray-500 hover:bg-gray-50  group-hover:border-gray-700 dark:text-black md:h-6 md:w-24  md:px-4 md:text-xs lg:w-28">
-                  <ClockWithTime readingTimeInMinutes={readingTimeInMinutes} /> {readingTimeInMinutes} min read
+                <Badge className="h-5 select-none gap-1 border-2 border-gray-400 bg-white px-2 pl-4 text-[8px] text-gray-500 hover:bg-gray-50  group-hover:border-gray-700 dark:text-black md:h-6 md:w-24  md:px-4 md:text-xs lg:w-28">
+                  <ClockWithTime readingTimeInMinutes={readingTimeInMinutes} /> {readingTimeInMinutes} min
                 </Badge>
               </motion.div>
             )}

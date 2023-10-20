@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { AnimatedIcon } from "./animated-icon"
 import { Icons } from "./icons"
+import { AspectRatio } from "@radix-ui/react-aspect-ratio"
 
 interface AnimatedImageProps {
   alt?: string
@@ -31,16 +32,18 @@ export function AnimatedImage({
 
         <Icons.logo className="z-100 absolute -right-2 -top-2  fill-black text-white"/>
         </AnimatedIcon>
+        <AspectRatio ratio={1/1}>
 
         <motion.img
           src={props.src}
           alt={props.title}
-          className="z-1 mb-6 h-96 w-full select-none rounded-lg object-cover"
+          className="z-1 mb-6 h-full w-full select-none rounded-lg object-cover"
           variants={variants}
           initial="hidden"
           animate="visible"
           transition={{ duration: 0.3, ease: "easeInOut" }}
         />
+        </AspectRatio>
       </div>
     </AnimatedIcon>
   )

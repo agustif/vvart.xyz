@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { Icons } from "./icons"
 
 interface CalloutProps {
   icon?: string
@@ -14,7 +15,7 @@ export function Callout({
 }: CalloutProps) {
   return (
     <div
-      className={cn("my-6 flex items-start rounded-md border border-l-4 bg-gray-100 p-4 font-semibold text-gray-300", {
+      className={cn("text-md my-6 flex items-start rounded-lg border-2 border-l-8 bg-gray-100 p-4 font-normal text-gray-700", {
         "border-red-900 bg-red-50": type === "danger",
         "border-yellow-900 bg-yellow-50": type === "warning",
         "border-gray-900 bg-gray-50": type === "default",
@@ -23,7 +24,7 @@ export function Callout({
       })}
       {...props}
     >
-      {icon && <span className="mr-4 text-2xl">{icon}</span>}
+      {icon && <span className="mr-4">{<Icons.info size={36} />}</span>}
       <div>{children}</div>
     </div>
   )

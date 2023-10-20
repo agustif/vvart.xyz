@@ -72,7 +72,7 @@ const components = {
     <a
     target="_blank"
     rel="noopener noreferrer"
-      className={cn("font-medium text-blue-300 underline underline-offset-4 transition-all duration-200 hover:text-blue-400 hover:underline-offset-8 dark:text-[#60a5fa]", className)}
+      className={cn("font-medium text-black underline underline-offset-4 transition-all duration-200 hover:text-blue-500 hover:underline-offset-8 dark:hover:text-[#60a5fa]", className)}
       {...props}
     />
   ),
