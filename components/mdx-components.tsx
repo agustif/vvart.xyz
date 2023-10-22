@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 import { Callout } from "@/components/callout"
 import { MdxCard } from "@/components/mdx-card"
 import { MdxAccordion } from "./mdx-accordion"
-import { Tweet } from 'react-tweet'
+import { Tweet, TweetProps } from 'react-tweet'
 import {Icons} from "@/components/icons"
 import ReadingProgressBar from './reading-progress';
 import {AnimatedIcon} from './animated-icon';
@@ -72,7 +72,7 @@ const components = {
     <a
     target="_blank"
     rel="noopener noreferrer"
-      className={cn("font-medium text-black underline underline-offset-4 transition-all duration-200 hover:text-blue-500 hover:underline-offset-8 dark:hover:text-[#60a5fa]", className)}
+      className={cn("font-medium underline underline-offset-4 transition-all duration-200 hover:text-blue-500 hover:underline-offset-8 dark:text-white dark:hover:text-[#60a5fa]", className)}
       {...props}
     />
   ),
@@ -89,7 +89,7 @@ const components = {
     <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
   ),
   li: ({ className, ...props }: { className?: string }) => (
-    <li className={cn("mt-2", className)} {...props} />
+    <li className={cn("mt-2 text-xl dark:text-white", className)} {...props} />
   ),
   blockquote: ({ className, ...props }: { className?: string }) => (
     <blockquote
@@ -160,10 +160,16 @@ const components = {
   Callout,
   Card: MdxCard,
   Accordion: MdxAccordion,
-  Tweet,
+  Tweet: ({ ...props }: TweetProps) => (
+    <div className="mx-auto flex w-full justify-center">
+    <Tweet
+      {...props}
+    />
+    </div>
+  ),
   Icons,
-    ReadingProgressBar,
-    AnimatedIcon,
+  ReadingProgressBar,
+  AnimatedIcon,
 }
 
 interface MdxProps {

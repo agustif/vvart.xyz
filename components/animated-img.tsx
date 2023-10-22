@@ -28,10 +28,6 @@ export function AnimatedImage({
   return (
     <AnimatedIcon>
       <div className="relative">
-      <AnimatedIcon x={3} y={2} duration={0.1} delay={0.4}>
-
-        <Icons.logo className="z-100 absolute -right-2 -top-2  fill-black text-white"/>
-        </AnimatedIcon>
         <AspectRatio ratio={1/1}>
 
         <motion.img
