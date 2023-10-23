@@ -44,7 +44,7 @@ export function AnimatedAccordionTrigger({
                   // @ts-expect-error
                   href={`#${slug}`}
                   className={cn(
-                    "duration-400 text-md select-none font-semibold transition-all dark:group-hover:text-gray-700 md:text-lg lg:text-xl",
+                    "duration-400 text-md select-none font-semibold text-gray-950 transition-all dark:group-hover:text-gray-700 md:text-lg lg:text-xl",
                     isOpen ? "text-left text-gray-400 underline-offset-4 dark:text-gray-700" : "underline-transparent text-left dark:text-gray-200",
                     isOpen && "decoration-offset-8 group-hover:decoration-offset-8"
                   )}
