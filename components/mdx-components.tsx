@@ -72,15 +72,25 @@ const components = {
       {...props}
     />
   ),
-  a: ({ href, ...props }: { href?: string }) => (
+  a: ({ href, ...props }: { href?: string }) => {
+    if (href?.includes("x.com") || href?.includes("twitter.com")) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            "font-medium underline underline-offset-4 transition-all duration-200 hover:text-blue-500 hover:underline-offset-8 dark:text-white dark:hover:text-[#60a5fa]",
+          )}
+          {...props}
+        />
+      )}
+      else
+      return(
     <LinkPreview
-    href={href || ""}
-    // target="_blank"
-    // rel="noopener noreferrer"
-    //   className={cn("font-medium underline underline-offset-4 transition-all duration-200 hover:text-blue-500 hover:underline-offset-8 dark:text-white dark:hover:text-[#60a5fa]", className)}
-      {...props}
-    />
-  ),
+    href={href || ""} {...props}
+    />)
+    },
   p: ({ className, ...props }: { className?: string }) => (
     <p
       className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
