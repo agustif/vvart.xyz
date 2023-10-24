@@ -12,6 +12,10 @@ import { Tweet, TweetProps } from 'react-tweet'
 import {Icons} from "@/components/icons"
 import ReadingProgressBar from './reading-progress';
 import {AnimatedIcon} from './animated-icon';
+import {Accordion, AccordionItem, AccordionTrigger, AccordionContent} from "@/components/ui/accordion";
+import NFTEmbed from "@/components/nft-embed";
+import {Tooltip} from '@/components/ui/tooltip';
+import LinkPreview from '@/components/link-preview'
 
 const components = {
   h1: ({ className, ...props }: { className?: string }) => (
@@ -44,7 +48,7 @@ const components = {
   h4: ({ className, ...props }: { className?: string }) => (
     <h4
       className={cn(
-        "mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
+        "mb-2 mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
         className
       )}
       {...props}
@@ -68,11 +72,12 @@ const components = {
       {...props}
     />
   ),
-  a: ({ className, ...props }: { className?: string }) => (
-    <a
-    target="_blank"
-    rel="noopener noreferrer"
-      className={cn("font-medium underline underline-offset-4 transition-all duration-200 hover:text-blue-500 hover:underline-offset-8 dark:text-white dark:hover:text-[#60a5fa]", className)}
+  a: ({ href, ...props }: { href?: string }) => (
+    <LinkPreview
+    href={href || ""}
+    // target="_blank"
+    // rel="noopener noreferrer"
+    //   className={cn("font-medium underline underline-offset-4 transition-all duration-200 hover:text-blue-500 hover:underline-offset-8 dark:text-white dark:hover:text-[#60a5fa]", className)}
       {...props}
     />
   ),
@@ -110,7 +115,7 @@ const components = {
   ),
   hr: ({ ...props }) => <hr className="-mx-10 my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <div className="my-6 w-full overflow-y-auto">
+    <div className="mx-auto my-1 w-full overflow-y-auto">
       <table className={cn("w-full", className)} {...props} />
     </div>
   ),
@@ -158,8 +163,13 @@ const components = {
   ),
   Image,
   Callout,
+  NFTEmbed,
   Card: MdxCard,
   Accordion: MdxAccordion,
+  Spoiler: Accordion,
+  SpoilerItem: AccordionItem,
+  SpoilerTrigger: AccordionTrigger,
+  SpoilerContent: AccordionContent,
   Tweet: ({ ...props }: TweetProps) => (
     <div className="mx-auto flex w-full justify-center">
     <Tweet
@@ -170,6 +180,7 @@ const components = {
   Icons,
   ReadingProgressBar,
   AnimatedIcon,
+  LinkPreview,
 }
 
 interface MdxProps {

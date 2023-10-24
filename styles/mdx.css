@@ -54,10 +54,74 @@
 #twitter-share-btn i {
   pointer-events: none;
 }
-h1, h2, h3, h4, h5, h6, h7 {
+h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
-
+/*
 .dark, h1, h2, h3, h4, h5, h6, h7 {
   color: white;
+} */
+.link-preview {
+  position: relative;
+  display: inline-block;
+}
+
+.link-preview div {
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
+  border-radius: 10px;
+
+  background-color: #ffffff;
+  color: #272121;
+  font-size: calc(0.7rem + 0.5vw);
+  padding: 1rem;
+  margin-top: 1rem;
+  width: calc(10rem + 10vw);
+  left: 1rem;
+  /* z-index: 19999; */
+  box-shadow: 2px 1px 3px rgba(91, 93, 94, 0.3);
+}
+
+.link-preview div.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.link-preview div.visible {
+  visibility: visible;
+  transition: opacity 0.2s, visibility 0.2s;
+  opacity: 1;
+}
+
+.link-preview [role='alert'] {
+  visibility: hidden;
+  color: #eb5656;
+  font-family: monospace;
+}
+
+.link-preview a {
+  text-decoration: none !important;
+}
+
+.link-preview h2 {
+  margin-top: 0;
+  text-decoration: none;
+  margin-bottom: 2px;
+  font-weight: bold;
+  font-size: 18px !important;
+  display: block;
+}
+
+.link-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 80px;
+  position: relative;
+}
+
+.link-preview p {
+  font-size: 12px !important;
+  line-height: 14px;
+  /* max-height: 30px; */
 }

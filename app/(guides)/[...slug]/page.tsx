@@ -15,6 +15,7 @@ import { buttonVariants } from "@/components/ui/button"
 import TwitterShare from "@/components/twitter-share"
 import { GuideAuthors } from "@/components/guide-authors"
 import { AnimatedImage } from "@/components/animated-img"
+import 'react-link-previewer/src/style.css'
 
 interface GuidePageProps {
   params: {

@@ -96,9 +96,9 @@
   }
 }
 
-h2 {
+/* h2 {
   @apply invisible h-0 select-none
-}
+} */
 
 
 .prose :where(img):not(:where([class~=not-prose],[class~=not-prose] *)) {
