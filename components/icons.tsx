@@ -29,11 +29,15 @@ import {
   ExternalLink,
   PenLine,
   ArrowDown,
+  ArrowUp,
   BadgeInfo,
+  MousePointerClick,
 } from "lucide-react"
 
 export const Icons = {
+  click: MousePointerClick,
   arrowDown: ArrowDown,
+  arrowUp: ArrowUp,
   info: BadgeInfo,
   link: ExternalLink,
   home: Home,

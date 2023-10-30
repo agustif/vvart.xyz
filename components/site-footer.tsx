@@ -70,7 +70,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             >
               Built by{" "}
               <span className="bg-gradient-to-r from-green-600 to-green-600 bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]">
-                Agusti Fernandez Pardo
+                Agusti Pardo
               </span>
               <Icons.code className="ml-2 inline-flex h-5 w-5 group-hover:text-green-600" />
             </a>

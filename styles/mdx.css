@@ -149,3 +149,17 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.5rem;
   padding-bottom: 0;
 }
+.dark-table *,:after,:before {
+  box-sizing: border-box;
+  border: 0 solid transparent !important;
+}
+.border-black {
+  box-sizing: border-box;
+  border-left: 2px solid black !important;
+  border-right: 2px solid black !important;
+}
+
+
+.link-preview a {
+  text-decoration: none !important;
+}

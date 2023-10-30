@@ -88,6 +88,8 @@ const components = {
       else
       return(
     <LinkPreview
+    target="_blank"
+    rel="noopener noreferrer"
     href={href || ""} {...props}
     />)
     },
