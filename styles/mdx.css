@@ -77,18 +77,19 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   visibility: visible;
   opacity: 1;
-  border-radius: 10px;
+  border-radius: 1  0px;
 
   background-color: #ffffff;
   color: #272121;
-  font-size: calc(0.7rem + 0.5vw);
-  padding: 0;
-  margin-top: 1rem;
-  width: 300px;
-  left: 0px;
+  font-size: 12px !important;
+  padding: 6px !important;
+  border: 1.5px solid #00000020 !important;
+  margin-top: 6px;
+  width: 280px !important;
+  left: -10px;
   /* z-index: 19999; */
-  box-shadow: 3px 3px 3px rgba(91, 93, 94, 0.3);
-  transition: opacity 0.2s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .link-preview div.hidden {
@@ -131,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   position: relative;
 
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
   transition: opacity 0.2s ease-in-out;
 }
 

@@ -37,7 +37,7 @@ export function AnimatedAccordionTrigger({
       >
         <div className="mr-2 flex w-full flex-col justify-between space-y-4 lg:mr-6">
           <div className="items-center space-y-2 ">
-            <div className={cn("flex", isOpen ? "justify-center" : "justify-between")}>
+            <div className={cn("flex", isOpen ? "justify-between" : "justify-between")}>
               {title && (
                 <motion.h3
                   id={slug}

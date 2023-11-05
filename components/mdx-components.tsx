@@ -80,7 +80,7 @@ const components = {
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "font-medium underline underline-offset-4 transition-all duration-200 hover:text-blue-500 hover:underline-offset-8 dark:text-white dark:hover:text-[#60a5fa]",
+            "break-all font-medium underline underline-offset-4 transition-all duration-200 hover:text-blue-500 hover:underline-offset-8 dark:text-white dark:hover:text-[#60a5fa]",
           )}
           {...props}
         />
