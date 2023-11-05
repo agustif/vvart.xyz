@@ -19,8 +19,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   }
   // const ip = req.ip;
   const forwarded = req.headers.get("x-forwarded-for")
-  const ip = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress ?? req.ip
-  console.log(forwarded, ip)
+  const ip = req.ip ?? forwarded?.split(/, /)[0]
   if (ip) {
     // Hash the IP in order to not store it directly in your db.
     const buf = await crypto.subtle.digest(
@@ -35,7 +34,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const isNew = await kv.set(
       ["deduplicate", hash, slug].join(":"),
       "true",
-      { expirationTtl: 24 * 60 * 60 },
+      { ex: 24 * 60 * 60, nx: true },
     );
     if (!isNew) {
       new NextResponse(null, { status: 202 });
@@ -43,7 +42,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   }
   const pageviewsKey = ["pageviews", "guides", slug].join(":");
   const currentValue = await kv.get(pageviewsKey);
-  const newValue = currentValue ? parseInt(currentValue) + 1 : 1;
+  const newValue = currentValue ? parseInt("${currentValue}") + 1 : 1;
   await kv.set(pageviewsKey, newValue.toString());
   return new NextResponse(null, { status: 202 });
 }
