@@ -2,15 +2,18 @@
 
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
+import { Eye } from "lucide-react"
 
 interface DocsPageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   heading: string
   text?: string
+  views?: number
 }
 
 export function DocsPageHeader({
   heading,
   text,
+  views,
   className,
   ...props
 }: DocsPageHeaderProps) {
@@ -41,20 +44,33 @@ export function DocsPageHeader({
       initial="hidden"
       animate="visible"
     >
-      <motion.h1
-        className="inline-block font-heading text-2xl md:text-4xl lg:text-5xl"
-        variants={headingVariants}
-      >
-        {heading}
-      </motion.h1>
+
+      <div className="flex items-center justify-between">
+        <motion.h1
+          className="inline-block font-heading text-2xl md:text-4xl lg:text-5xl"
+          variants={headingVariants}
+        >
+          {heading}
+        </motion.h1>
+
+      </div>
+      <div className="flex justify-between">
       {text && (
         <motion.p
-          className="text-xl text-muted-foreground"
+          className="w-[100%] text-xl text-muted-foreground"
           variants={textVariants}
         >
           {text}
         </motion.p>
       )}
+              {views && (
+    <motion.div           variants={textVariants}
+    className="flex items-center justify-end space-x-2 font-medium text-gray-500">
+      <Eye size={18} className="fill-gray-500" />
+      <motion.span>{views}K</motion.span>
+    </motion.div>
+  )}
+        </div>
       <motion.hr
         className="my-4"
         variants={hrVariants}

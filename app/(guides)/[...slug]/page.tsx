@@ -15,6 +15,9 @@ import { buttonVariants } from "@/components/ui/button"
 import TwitterShare from "@/components/twitter-share"
 import { GuideAuthors } from "@/components/guide-authors"
 import { AnimatedImage } from "@/components/animated-img"
+import { ReportView } from "./view";
+import { kv } from "@vercel/kv";
+
 import 'react-link-previewer/src/style.css'
 
 interface GuidePageProps {
@@ -44,7 +47,6 @@ export async function generateMetadata({
   }
 
   const url = env.NEXT_PUBLIC_APP_URL
-
   const ogUrl = new URL(`${url}/api/og`)
   ogUrl.searchParams.set("heading", guide.title)
   ogUrl.searchParams.set("type", "Guide")
@@ -90,6 +92,7 @@ export async function generateStaticParams(): Promise<
 
 export default async function GuidePage({ params }: GuidePageProps) {
   const guide = await getGuideFromParams(params)
+  const views = (await kv.get<number>(["pageviews", "guides", guide.slug].join(":"))) ?? 0;
 
   if (!guide) {
     notFound()
@@ -106,7 +109,8 @@ export default async function GuidePage({ params }: GuidePageProps) {
       <div>
         <TwitterShare />
 
-        <DocsPageHeader heading={guide.title} text={guide.description} />
+        <DocsPageHeader heading={guide.title} text={guide.description} views={views}/>
+        <ReportView slug={guide.slug} />
         <AnimatedImage src={guide.image} alt={`${guide.title}`} className="select-none rounded-lg object-cover" />
 
         <Mdx code={guide.body.code} />
