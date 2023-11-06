@@ -34,7 +34,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const isNew = await kv.set(
       ["deduplicate", hash, slug].join(":"),
       "true",
-      { ex: 24 * 60 * 60, nx: true },
+      { ex: 24 * 60 * 60 },
     );
     if (!isNew) {
       new NextResponse(null, { status: 202 });
@@ -42,7 +42,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   }
   const pageviewsKey = ["pageviews", "guides", slug].join(":");
   const currentValue = await kv.get(pageviewsKey);
-  const newValue = currentValue ? parseInt("${currentValue}") + 1 : 1;
+  const newValue = currentValue ? parseInt(currentValue as string) + 1 : 1;
   await kv.set(pageviewsKey, newValue.toString());
   return new NextResponse(null, { status: 202 });
 }

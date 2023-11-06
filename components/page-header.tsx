@@ -63,13 +63,12 @@ export function DocsPageHeader({
           {text}
         </motion.p>
       )}
-              {views && (
+
     <motion.div           variants={textVariants}
     className="flex items-center justify-end space-x-2 font-medium text-gray-500">
-      <Eye size={18} className="fill-gray-500" />
-      <motion.span>{views}K</motion.span>
+      <Eye size={18} className=" fill-white" />
+      <motion.span>{views ?? 0}</motion.span>
     </motion.div>
-  )}
         </div>
       <motion.hr
         className="my-4"

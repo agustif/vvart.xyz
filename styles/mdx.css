@@ -79,14 +79,14 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
   border-radius: 1  0px;
 
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   color: #272121;
   font-size: 12px !important;
   padding: 6px !important;
   border: 1.5px solid #00000020 !important;
-  margin-top: 6px;
-  width: 280px !important;
-  left: -10px;
+  margin-top: 2px;
+  max-width: 280px !important;
+  left: 10px !important;
   /* z-index: 19999; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
     transition: opacity 0.2s ease-in-out;
