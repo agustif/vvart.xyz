@@ -63,20 +63,14 @@ export async function generateMetadata({
       description: guide.description,
       type: "article",
       url: absoluteUrl(guide.slug),
-      images: [
-        {
-          url: ogUrl.toString(),
-          width: 1200,
-          height: 630,
-          alt: guide.title,
-        },
-      ],
+      images: [`${siteConfig.url}/og.jpg`],
+
     },
     twitter: {
       card: "summary_large_image",
       title: guide.title,
       description: guide.description,
-      images: [ogUrl.toString()],
+      images: [`${siteConfig.url}/og.jpg`],
     },
   }
 }

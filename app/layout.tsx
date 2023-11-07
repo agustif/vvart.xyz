@@ -31,19 +31,20 @@ export const metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Server Components",
-    "Radix UI",
+    "Checks",
+    "Visualize Value",
+    "NFT",
+    "Guide",
+    "Crypto",
+    "Collectors"
   ],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "Matt O Brien",
+      url: "https://twitter.com/mattob_eth",
     },
   ],
-  creator: "shadcn",
+  creator: "Agusti",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -61,7 +62,7 @@ export const metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/og.jpg`],
-    creator: "@shadcn",
+    creator: "@mattob_eth",
   },
   icons: {
     icon: "/favicon.ico",
