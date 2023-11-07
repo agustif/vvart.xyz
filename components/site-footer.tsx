@@ -63,14 +63,14 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
         >
           <p className="flex flex-row items-center gap-2 text-center text-sm leading-loose md:text-left">
             <a
-              href={"https://twitter.com/@0xAgusti"}
+              href={"https://twitter.com/@agustife"}
               target="_blank"
               rel="noreferrer noopener"
               className=" text-sm font-medium transition-all duration-300 ease-in-out hover:text-green-600"
             >
               Built by{" "}
               <span className="bg-gradient-to-r from-green-600 to-green-600 bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]">
-                @0xAgusti
+                @agustife
               </span>
               <Icons.code className="ml-2 inline-flex h-5 w-5 group-hover:text-green-600" />
             </a>
