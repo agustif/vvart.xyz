@@ -75,6 +75,16 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    .prose {
+
+      --tw-prose-headings: #ccc !important;
+      --tw-prose-bold: #fff !important;
+    }
+  }
+}
+
 @layer base {
   * {
     @apply border-border;

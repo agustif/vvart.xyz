@@ -19,12 +19,12 @@ export function Callout({
         "border-red-900 bg-red-50": type === "danger",
         "border-yellow-900 bg-yellow-50": type === "warning",
         "border-gray-900 bg-gray-50": type === "default",
-        "border-black bg-gray-50 dark:bg-gray-950 dark:border-gray-900 dark": type === "info",
+        "border-black bg-gray-50 dark:bg-gray-950 dark:border-gray-800": type === "info",
         // type info blueish
       })}
       {...props}
     >
-      {icon && <span className="mr-4">{<Icons.info size={36} />}</span>}
+      {icon && <span className="mr-4">{<Icons.info size={36} className="fill-black dark:fill-white" />}</span>}
       <div>{children}</div>
     </div>
   )
