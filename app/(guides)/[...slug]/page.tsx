@@ -11,7 +11,7 @@ import { Metadata } from "next"
 import { env } from "@/env.mjs"
 import { absoluteUrl, cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
-
+import {BadgeCheck} from "lucide-react"
 import TwitterShare from "@/components/twitter-share"
 import { GuideAuthors } from "@/components/guide-authors"
 import { AnimatedImage } from "@/components/animated-img"
@@ -120,6 +120,8 @@ export default async function GuidePage({ params }: GuidePageProps) {
           <Icons.logo />
           END
           </div>
+          {/* <BadgeCheck className="fill-black text-white"  size={42} /> */}
+
         <div className="group flex justify-start py-6 selection:bg-black  selection:text-white  selection:dark:bg-white  selection:dark:text-black  lg:py-20">
           <Link
             href="/"

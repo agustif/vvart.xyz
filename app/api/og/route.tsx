@@ -43,7 +43,7 @@ export async function GET(req: Request): Promise<Response> {
           }}
         >
           {/* @ts-ignore */}
-          <BadgeCheck tw="fill-white text-white" fill={paint} size={42} />
+          <BadgeCheck tw="fill-black text-white" ize={42} />
 
           <div tw="flex flex-col flex-1 py-10">
             <div
@@ -71,19 +71,12 @@ export async function GET(req: Request): Promise<Response> {
               style={{ fontFamily: "Inter", fontWeight: "normal" }}
             >
           <p tw="flex flex-row items-center gap-2 text-center text-xl leading-loose md:text-left">
-            <a
-              href={"#"}
-              target="_blank"
-              rel="noreferrer noopener"
-              tw="group text-sm font-medium transition-all duration-300 ease-in-out hover:text-blue-500"
+          <div
+              tw="flex text-xl uppercase font-bold tracking-tight"
+              style={{ fontFamily: "Inter", fontWeight: "normal" }}
             >
-              <Icons.pen />
-              Written by{" "}
-              <span tw="">
-                Matt O Brien
-              </span>
-            </a>
-          </p>            </div>
+              Written by Matt O Brien
+            </div> </div>
           </div>
         </div>
       ),
