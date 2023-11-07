@@ -12,7 +12,7 @@ import { GuideAuthors } from "@/components/guide-authors"
               export const metadata = {
                 title: "Checks Guide",
                 description:
-                  "Collector's guide into the visualize value ecosystem: checks",
+                  "Collector's guide into the visualize value ecosystem: checks and opepen",
               }
 
               export default function HomePage() {
@@ -29,8 +29,8 @@ import { GuideAuthors } from "@/components/guide-authors"
                   <div className="px-3 py-6">
 
                     <DocsPageHeader
-                      heading="Checks Guide"
-                      text="Collector's guide into the visualize value ecosystem: checks"
+                      heading="Welcome to the VV Art Collector's Guide"
+                      text="Collector's guide into the visualize value ecosystem"
                     />
 
                     <div>

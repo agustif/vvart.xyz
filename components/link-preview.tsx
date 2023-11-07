@@ -9,7 +9,7 @@ interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 
 function CustomLinkPreview({ href, host = "https://vercel-og-service.vercel.app/", className, ...rest }: Props) {
   return (
-    <a href={href} className="underline-none dark:text-white">
+    <a href={href} className="underline-none dark:text-white" target="_blank">
     <LinkPreview
     external={true}
     rel="noopener noreferrer"
