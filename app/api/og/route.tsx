@@ -41,7 +41,7 @@ export async function GET(req: Request): Promise<Response> {
                 : "white",
           }}
         >
-          <BadgeCheck fill={paint} size={42} />
+          <BadgeCheck tw="fill-white text-white" fill={paint} size={42} />
           {/* <Icons.logo  /> */}
           {/* <svg width="212" height="50" viewBox="0 0 212 50" fill="none">
             <g clip-path="url(#a)" fill={paint}>
