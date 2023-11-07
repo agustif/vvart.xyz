@@ -1,7 +1,8 @@
 import { ImageResponse } from "@vercel/og"
 
 import { ogImageSchema } from "@/lib/validations/og"
-import {Icons} from "@/components/icons"
+import {BadgeCheck} from "lucide-react"
+
 export const runtime = "edge"
 
 const interRegular = fetch(
@@ -40,7 +41,8 @@ export async function GET(req: Request): Promise<Response> {
                 : "white",
           }}
         >
-          <Icons.logo />
+          <BadgeCheck fill={paint} size={42} />
+          {/* <Icons.logo  /> */}
           {/* <svg width="212" height="50" viewBox="0 0 212 50" fill="none">
             <g clip-path="url(#a)" fill={paint}>
               <path d="M99.715 9.784h26.128v4.823h-10.365v25.37h-5.182v-25.37h-10.58V9.784ZM56.746 9.784v4.823H35.803v7.757h16.842v4.823H35.803v7.967h20.943v4.823H30.62v-25.37h-.002V9.784h26.128ZM69.792 9.797H63.01l24.292 30.192h6.801L81.956 24.903 94.084 9.82l-6.782.01-8.742 10.856-8.768-10.89ZM76.751 31.363l-3.396-4.222L62.99 40.012h6.802l6.96-8.649Z" />
@@ -100,7 +102,7 @@ export async function GET(req: Request): Promise<Response> {
               tw="flex items-center text-xl"
               style={{ fontFamily: "Inter", fontWeight: "normal" }}
             >
-          <p tw="flex flex-row items-center gap-2 text-center text-sm leading-loose md:text-left">
+          <p tw="flex flex-row items-center gap-2 text-center text-lg leading-loose md:text-left">
             <a
               href={"#"}
               target="_blank"
@@ -109,7 +111,7 @@ export async function GET(req: Request): Promise<Response> {
             >
               <Icons.pen />
               Written by{" "}
-              <span tw="bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]">
+              <span tw="">
                 Matt O Brien
               </span>
             </a>
