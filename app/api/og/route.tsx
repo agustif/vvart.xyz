@@ -76,7 +76,8 @@ export async function GET(req: Request): Promise<Response> {
               style={{ fontFamily: "Inter", fontWeight: "normal" }}
             >
               Written by Matt O Brien
-            </div> </div>
+            </div>
+            </p></div>
           </div>
         </div>
       ),
