@@ -1,7 +1,7 @@
 import { ImageResponse } from "@vercel/og"
 
 import { ogImageSchema } from "@/lib/validations/og"
-
+import {Icons} from "@/components/icons"
 export const runtime = "edge"
 
 const interRegular = fetch(
@@ -40,7 +40,8 @@ export async function GET(req: Request): Promise<Response> {
                 : "white",
           }}
         >
-          <svg width="212" height="50" viewBox="0 0 212 50" fill="none">
+          <Icons.logo />
+          {/* <svg width="212" height="50" viewBox="0 0 212 50" fill="none">
             <g clip-path="url(#a)" fill={paint}>
               <path d="M99.715 9.784h26.128v4.823h-10.365v25.37h-5.182v-25.37h-10.58V9.784ZM56.746 9.784v4.823H35.803v7.757h16.842v4.823H35.803v7.967h20.943v4.823H30.62v-25.37h-.002V9.784h26.128ZM69.792 9.797H63.01l24.292 30.192h6.801L81.956 24.903 94.084 9.82l-6.782.01-8.742 10.856-8.768-10.89ZM76.751 31.363l-3.396-4.222L62.99 40.012h6.802l6.96-8.649Z" />
               <path
@@ -68,7 +69,7 @@ export async function GET(req: Request): Promise<Response> {
                 <path fill={paint} d="M0 9.771h150v30.457H0z" />
               </clipPath>
             </defs>
-          </svg>
+          </svg> */}
           <div tw="flex flex-col flex-1 py-10">
             <div
               tw="flex text-xl uppercase font-bold tracking-tight"
@@ -99,24 +100,20 @@ export async function GET(req: Request): Promise<Response> {
               tw="flex items-center text-xl"
               style={{ fontFamily: "Inter", fontWeight: "normal" }}
             >
-              <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
-                <path
-                  d="M30 44v-8a9.6 9.6 0 0 0-2-7c6 0 12-4 12-11 .16-2.5-.54-4.96-2-7 .56-2.3.56-4.7 0-7 0 0-2 0-6 3-5.28-1-10.72-1-16 0-4-3-6-3-6-3-.6 2.3-.6 4.7 0 7a10.806 10.806 0 0 0-2 7c0 7 6 11 12 11a9.43 9.43 0 0 0-1.7 3.3c-.34 1.2-.44 2.46-.3 3.7v8"
-                  stroke={paint}
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M18 36c-9.02 4-10-4-14-4"
-                  stroke={paint}
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <div tw="flex ml-2">github.com/shadcn/taxonomy</div>
-            </div>
+          <p tw="flex flex-row items-center gap-2 text-center text-sm leading-loose md:text-left">
+            <a
+              href={"#"}
+              target="_blank"
+              rel="noreferrer noopener"
+              tw="group text-sm font-medium transition-all duration-300 ease-in-out hover:text-blue-500"
+            >
+              <Icons.pen />
+              Written by{" "}
+              <span tw="bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]">
+                Matt O Brien
+              </span>
+            </a>
+          </p>            </div>
           </div>
         </div>
       ),
