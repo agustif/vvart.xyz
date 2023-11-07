@@ -13,7 +13,7 @@ function CustomLinkPreview({ href, host = "https://vercel-og-service.vercel.app/
     <LinkPreview
     external={true}
     rel="noopener noreferrer"
-    className={cn("font-medium underline transition duration-200  hover:text-blue-500 dark:text-white dark:hover:text-[#60a5fa]", className)}
+    className={cn("underline-none font-medium underline transition duration-200  hover:text-blue-500 dark:text-white dark:hover:text-[#60a5fa]", className)}
     {...rest} host={host} href={href}/>
     </a>
   );
