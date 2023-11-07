@@ -140,7 +140,7 @@ const components = {
   th: ({ className, ...props }: { className?: string }) => (
     <th
       className={cn(
-        "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border px-4 py-2 text-left font-bold dark:text-white [&[align=center]]:text-center [&[align=right]]:text-right",
         className
       )}
       {...props}
@@ -149,7 +149,7 @@ const components = {
   td: ({ className, ...props }: { className?: string }) => (
     <td
       className={cn(
-        "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border px-4 py-2 text-left dark:text-gray-100 [&[align=center]]:text-center [&[align=right]]:text-right",
         className
       )}
       {...props}
