@@ -17,6 +17,7 @@ import { GuideAuthors } from "@/components/guide-authors"
 import { AnimatedImage } from "@/components/animated-img"
 import { ReportView } from "./view";
 import { kv } from "@vercel/kv";
+import { siteConfig } from "@/config/site"
 
 import 'react-link-previewer/src/style.css'
 
