@@ -42,6 +42,7 @@ export async function GET(req: Request): Promise<Response> {
                 : "white",
           }}
         >
+          {/* @ts-ignore */}
           <BadgeCheck tw="fill-white text-white" fill={paint} size={42} />
 
           <div tw="flex flex-col flex-1 py-10">
