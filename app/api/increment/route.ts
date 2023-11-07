@@ -18,8 +18,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     return new NextResponse("Slug not found", { status: 400 });
   }
   // const ip = req.ip;
-  const forwarded = req.headers.get("x-forwarded-for")
-  const ip = req.ip ?? forwarded?.split(/, /)[0]
+  const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
   if (ip) {
     // Hash the IP in order to not store it directly in your db.
     const buf = await crypto.subtle.digest(
