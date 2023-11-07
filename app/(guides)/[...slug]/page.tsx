@@ -46,7 +46,7 @@ export async function generateMetadata({
     return {}
   }
 
-  const url = env.NEXT_PUBLIC_APP_URL
+  const url = env.NEXT_PUBLIC_APP_URL || "https://vvart.xyz"
   const ogUrl = new URL(`${url}/api/og`)
   ogUrl.searchParams.set("heading", guide.title)
   ogUrl.searchParams.set("type", "Guide")
