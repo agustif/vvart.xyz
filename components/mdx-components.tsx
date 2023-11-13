@@ -73,7 +73,7 @@ const components = {
     />
   ),
   a: ({ href, ...props }: { href?: string }) => {
-    if (href?.includes("x.com") || href?.includes("twitter.com") || href?.includes("etherscan.io") || href?.includes("opensea.io"")) {
+    if (href?.includes("x.com") || href?.includes("twitter.com") || href?.includes("etherscan.io") || href?.includes("opensea.io")) {
       return (
         <a
           href={href}
